@@ -11,7 +11,7 @@ module PageMatch
     end
 
     def self.match(&block)
-      page = PageMatcher.new
+      page = Page.new
       yield page if block_given?
       page
     end
