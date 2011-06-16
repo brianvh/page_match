@@ -25,9 +25,9 @@ module PageMatch
       @description = %(have #{msg})
     end
 
-    def see(msg='')
+    def contain(msg='')
       @message = msg
-      @description = %(see #{msg})
+      @description = %(contain #{msg})
     end
 
     def failure_message
