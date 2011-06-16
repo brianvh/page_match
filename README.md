@@ -54,7 +54,7 @@ describe "Visiting the home page", :type => :request do
 end
 ```
 
-Running these examples with the --format documentation option turned on, gives us:
+Running these examples with the _--format documentation_ option turned on, gives us:
 
 ```
 Visiting the home page
@@ -65,7 +65,7 @@ Visiting the home page
 
 On the surface, this example code and the documentation output is just fine. However the code is both hard to refactor and extremely verbose, with the HTML structure traversal code directly in the examples. In addition, the output lines that describe the examples are very generic.
 
-Using page_match we can create helper methods that wraps the matcher logic for our examples, gives us a way to refactor matchers into methods that we can re-use and provides for much better example descriptions:
+Using **page_match** we can create helper methods that wrap the matcher logic for our examples, gives us  methods that we can reuse and lets us construct much better example descriptions:
 
 ```ruby
 module MatchHelpers
@@ -85,7 +85,7 @@ module MatchHelpers
 end
 ```
 
-With this helper method in place, we can now rewrite the above example like this:
+With these helper methods in place, we can now rewrite the acceptance test:
 
 ``` ruby
 describe "Visiting the home page", :type => :request do
@@ -106,7 +106,7 @@ describe "Visiting the home page", :type => :request do
 end
 ```
 
-When we run this example file, with the --format documentation option, we get:
+When we run this example file, with the _--format documentation_ option, we get:
 
 ```
 Visiting the home page
@@ -115,4 +115,4 @@ Visiting the home page
     should have a main header for "Joe User"
 ```
 
-We're able to turn each example into a single line, containing a domain specific matcher for our application. In addition, we get context specific descriptions for our examples.
+The resulting test file is now easier to read, contains examples that make use of custom, domain specific matchers, that when output provide us with context-specific descriptions for those examples.
