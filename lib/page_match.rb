@@ -1,5 +1,7 @@
-require "page_match/version"
+require "page_match/page"
 
 module PageMatch
-  # Your code goes here...
+  def self.match &block
+    PageMatch::Page.match block
+  end
 end
