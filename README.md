@@ -65,7 +65,7 @@ Visiting the home page
 
 On the surface, this example code and the documentation output is just fine. However the code is both hard to refactor and extremely verbose, with the HTML structure traversal code directly in the examples. In addition, the output lines that describe the examples are very generic.
 
-Using **page_match** we can create helper methods that wrap the matcher logic for our examples, gives us  methods that we can reuse and lets us construct much better example descriptions:
+Using **page_match** we can create helper methods that wrap the matcher logic for our examples, giving us methods that we can reuse and letting us construct much better example descriptions:
 
 ```ruby
 module MatchHelpers
