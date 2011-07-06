@@ -116,3 +116,26 @@ Visiting the home page
 ```
 
 The resulting test file is now easier to read, contains examples that make use of custom, domain specific matchers, that when output provide us with context-specific descriptions for those examples.
+
+## Included Helper Methods
+
+When you install page_match you will also get a set of included helper methods, for the most common types of rendered page inspections. These include:
+
+### have_link
+
+``` ruby
+  it { should have_link(<Link Label>) }
+```
+
+### have_button
+
+``` ruby
+  it { should have_button(<Button Label>) }
+```
+
+### have_flash_notice
+
+``` ruby
+  it { should have_flash_notice(<Flash Text>) }
+```
+
