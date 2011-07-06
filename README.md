@@ -142,7 +142,7 @@ When you install page_match you will also get a set of included helper methods, 
 ### have_form_error
 
 ``` ruby
-  it { should have_button(<Error Text>) }
+  it { should have_form_error(<Error Text>) }
 ```
 
 ### have_text_field
