@@ -36,5 +36,32 @@ module PageMatch
       end
     end
 
+    def have_text_field(form, field)
+      PageMatch.match do |m|
+        m.have %(a text field on the #{form} form for #{field.inspect})
+        m.page { has_selector?(:xpath, %(.//input[@id="#{form}_#{field}"][@type="text"])) }
+      end
+    end
+
+    def have_text_area(form, field)
+      PageMatch.match do |m|
+        m.have %(a text area on the #{form} form for #{field.inspect})
+        m.page { has_selector?(:xpath, %(.//textarea[@id="#{form}_#{field}"])) }
+      end
+    end
+
+    def have_check_box(form, field)
+      PageMatch.match do |m|
+        m.have %(a checkbox on the #{form} form for #{field.inspect.gsub(/_$/, '')})
+        m.page { has_selector?(:xpath, %(.//input[@id="#{form}_#{field}"][@type="checkbox"])) }
+      end
+    end
+
+    def have_select_field(form, field)
+      PageMatch.match do |m|
+        m.have %(a select field on the #{form} form for #{field.inspect})
+        m.page { has_selector?(:xpath, %(.//select[@id="#{form}_#{field}"])) }
+      end
+    end
   end
 end
