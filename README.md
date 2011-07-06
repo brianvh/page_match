@@ -139,3 +139,33 @@ When you install page_match you will also get a set of included helper methods, 
   it { should have_flash_notice(<Flash Text>) }
 ```
 
+### have_form_error
+
+``` ruby
+  it { should have_button(<Error Text>) }
+```
+
+### have_text_field
+
+``` ruby
+  it { should have_text_field(:form_name, :field_name) }
+```
+
+### have_text_area
+
+``` ruby
+  it { should have_text_area(:form_name, :field_name) }
+```
+
+### have_check_box
+
+``` ruby
+  it { should have_check_box(:form_name, :field_name) }
+```
+
+### have_select_field
+
+``` ruby
+  it { should have_select_field(:form_name, :field_name) }
+```
+
