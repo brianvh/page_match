@@ -24,7 +24,7 @@ module PageMatch
 
     def have_flash_error(error)
       PageMatch.match do |m|
-        m.see %(a flash error containing "#{error}")
+        m.have %(a flash error containing "#{error}")
         m.page { within("#flash_error") { has_content?(error) } }
       end
     end
